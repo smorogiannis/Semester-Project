@@ -1,0 +1,133 @@
+body {
+    background-color: black;
+}
+
+.page{
+    background-color: rgb(202, 202, 255);
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.menu{
+    background-color: #333333;
+}
+
+.button {
+    background-color: #333333;
+    color:red;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.login-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.sidebar{
+    box-shadow: 0 5px #666;
+    border-radius: 10%;
+    margin-top: 1%;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 11%;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0,1;
+}
+
+.content{
+    box-shadow: 5px;
+    width: 60%;
+    background-color: rgb(252, 216, 253);
+}
+
+.footer{
+    color: black;
+    clear: both;
+    background-color: rgb(177, 0, 177);
+}
+
+li.men{
+    float: left;
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+}
+
+a{
+    color:black;
+}
+
+li.men>a{
+    color:white;
+}
+
+li.next>a, li.previous>a{
+    color:black;
+}
+ul.men{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+head{
+    background-color: red;
+}
+
+.post {
+  width: 50%;
+  overflow: auto;
+}
+
+.comment{
+    overflow: auto;
+}
+
+img{
+    width: 300px;
+    height: 400px;
+}
+
+hr{
+    border: solid;
+    border-color: black;
+    color: black;
+}
+
+.star{
+    color: goldenrod;
+    font-size: 2.0rem;
+    padding: 0 1rem; /* space out the stars */
+}
+.star::before{
+    content: '\2606';    /* star outline */
+    cursor: pointer;
+}
+.star.rated::before{
+    /* the style for a selected star */
+    content: '\2605';  /* filled star */
+}
+
+.stars{
+      counter-reset: rateme 0;   
+      font-size: 2.0rem;
+      font-weight: 900;
+}
+.star.rated{
+      counter-increment: rateme 1;
+}
+.stars::after{
+      content: counter(rateme) '/5';
+}

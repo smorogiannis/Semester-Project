@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="pics/1.jpg">
+    </head>
+    <body>
+         <div class="page">
+            <center>
+                <div class="menu">
+                    <ul class="men"> 
+                        <li class="men">
+                            <a href="index.jsp">Home</a>
+                        </li> 
+                        <li class="men"><a href="poems.jsp?pageNum=1">All Poems</a>
+                        </li> 
+                        <li class="men" style="float: right;">
+                            <a href="login.html">Log in</a>
+                        </li>
+                        <li class="men" style="float: right;">
+                            <a href="signin.html">Sign in</a>
+                        </li>
+                    </ul>
+                </div>
+            </center>
+            <div class="sidebar">
+                <center>
+                    Μπορειτε να ανεβασετε το δικο σας ποιημα, να αξιολογησετε ποιηματα και να γραψετε σχολια. Εαν δεν εχετε ακομα γινει μελος της σελιδας μας πατηστε πανω δεξια στο κουμπι sign in και δημιουργησε λογαριασμο 
+                </center>
+            </div>
+             <center>
+                 <div class="content" style="height: 900px;">
+                     <h2 style="width: 70%">Sorry username or password is wrong try log in again and be sure you type your username and password correctly :)</h2>
+                     <br><br><br><br><br><br>
+                     <form method="POST"  action="LogInServlet">  
+                        Username:
+                        <input type="text" name="username">
+                        Password:
+                        <input type="password" name="pass">
+                        <br><br>  
+                        <center>    
+                            <input type="SUBMIT" value="Log In">
+                        </center>
+                    </form>
+                 </div>
+             </center>
+         </div>
+        <div class="footer">Panep Thess 2020</div>
+    </body>
+</html>
