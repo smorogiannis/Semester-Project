@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sotiris/Desktop/poems/web/LogInNotFound.html</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/web/index.jsp</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/database/SearchRec.java</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/web/style.css</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/database/Conn.java</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/web/LogInServlet.java</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/web/ReviewServlet.java</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/web/CommentServlet.java</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/web/poems.jsp</file>
+            <file>file:/C:/Users/Sotiris/Desktop/poems/src/java/com/web/PostServlet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -11,9 +11,12 @@ public class CommentServlet extends HttpServlet{
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         int res;
-        String pID = (String)request.getSession().getAttribute("id");
-        String uID = (String) request.getSession().getAttribute("userId");
+        //String pID = (String)request.getSession().getAttribute("id");
+        String pID = request.getParameter("pID"); // This is for getting the parameter from the form
+        String uID = request.getParameter("uID");
+        //String uID = (String) request.getSession().getAttribute("userId");
         String comment = request.getParameter("comment");
+        String ret = "poems.jsp?id=" + pID +"&userId=" +uID;
         Connection conn = Conn.getConection();
         String user = (String) request.getSession().getAttribute("username");
         System.out.println("poem "+pID +" user "+uID +" comm "+comment +" user added "+user);
@@ -30,8 +33,8 @@ public class CommentServlet extends HttpServlet{
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");
             view.forward(request, response); 
         }else{
-            System.out.println("insertion complete");
-            RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+            System.out.println("insertion complete "+ret);
+            RequestDispatcher view = request.getRequestDispatcher(ret);
             view.forward(request, response);
         }
         /*request.getSession().setAttribute("numPage", 0);

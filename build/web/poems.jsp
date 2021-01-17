@@ -102,9 +102,10 @@
                     <%
                         while(rs.next()){
                             if(pID != null){
-                                out.print("<h2 style=\"width: 30%;white-space:pre-line;\">"+rs.getString("poem")+"</h2><br>");
+                                out.print("<h2>"+rs.getString("Title")+"</h2><br>");
+                                out.print("<h4 style=\"width: 30%;white-space:pre-line;\">"+rs.getString("poem")+"</h4><br>");
                                 rn.next();
-                                out.print("<h3 align='center'> by "+rn.getString("username")+"</h3>");
+                                out.print("<h2 align='center'> by "+rn.getString("username")+"</h2>");
                                 rn = SearchRec.getAvgRatings(conn, pID);
                                 rn.next();
                                 if(rn.getString("rate") != null){
@@ -129,6 +130,8 @@
                                         <span class="star">&nbsp;</span>
                                         <input id="getRating" type="text" name="rate" value="0" style="display:none;">
                                     </div>
+                                    <input type="hidden" name="pID" value="<%=pID%>" /> <!-- this is for giving the poem ID parameter from the form and not from the  request.getSession().setAttribute-->
+                                    <input type="hidden" name="uID" value="<%=uID%>" />
                                     <button type="submit">Rate</button>
                                 </form>
 
@@ -175,7 +178,7 @@
                             }
                             i++;
                      %>
-                     <a href="<c:url value="poems.jsp"> <c:param name="id" value='<%= rs.getString("id")%>'/> <c:param name="userId" value='<%= rs.getString("userId")%>'/> </c:url>"><h2>'<%= rs.getString("Title")%>'</h2></a>
+                     <a href="<c:url value="poems.jsp"> <c:param name="id" value='<%= rs.getString("id")%>'/> <c:param name="userId" value='<%= rs.getString("userId")%>'/> </c:url>"><h3>'<%= rs.getString("Title")%>'</h3></a>
                      <br> <br> <br>
                      <%
                             if(i == 7){
@@ -195,7 +198,7 @@
                         if(uID != null){
                             out.print("<br><br><br><br><br><br><h1 align='center'>Comments</h1><br><br><br>");
                             System.out.println("!!!!!!!usid" + request.getParameter("userId"));
-                            request.getSession().setAttribute("id", pID);
+                            //request.getSession().setAttribute("id", pID);
                             rs = SearchRec.selComs(conn, pID);
                             while(rs.next()){
                                     rn = SearchRec.selUserName(conn, rs.getString("userId"));
@@ -212,7 +215,9 @@
                                        <br><br> 
                                        <h2>Leave a Comment:</h2>
                                        <textarea name="comment" class="post" style="width: 50%; height: 300px"> </textarea>
-                                       <br><br>  
+                                       <br><br>
+                                       <input type="hidden" name="pID" value="<%=pID%>" /> <!-- this is for giving the poem ID parameter from the form and not from the  request.getSession().setAttribute-->
+                                       <input type="hidden" name="uID" value="<%=uID%>" />
                                        <center>    
                                            <input type="SUBMIT" value="Comment">
                                        </center>

@@ -27,6 +27,7 @@ public class PostServlet extends HttpServlet{
         System.out.println("poiima "+poem);
         String user = (String) request.getSession().getAttribute("username");
         System.out.println("poiitis "+user);
+        poem = poem.replace("'","\\"+"'");
         Connection conn = Conn.getConection();
         rs = SearchRec.selUserId(conn, user);
         try {
@@ -42,7 +43,7 @@ public class PostServlet extends HttpServlet{
             view.forward(request, response); 
         }else{
             System.out.println("insertion complete");
-            RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("poems.jsp?pageNum=1");
             view.forward(request, response);
         }
     }

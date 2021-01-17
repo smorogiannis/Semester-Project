@@ -131,3 +131,7 @@ hr{
 .stars::after{
       content: counter(rateme) '/5';
 }
+img{
+    width: 11.5vw;
+    height: 20vw;
+}

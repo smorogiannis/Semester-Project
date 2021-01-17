@@ -18,7 +18,7 @@ public class LogInServlet extends HttpServlet{
         String username = request.getParameter("username");
         String pass = request.getParameter("pass");
         Connection conn = Conn.getConection();
-        res = SearchRec.search(conn, username);
+        res = SearchRec.searchLogIn(conn, username, pass);
         if(res == 1){//vrike idio name
             HttpSession session = request.getSession();
             session.setAttribute("username", username);

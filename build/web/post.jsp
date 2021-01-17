@@ -57,7 +57,7 @@
                         <input type="text" name="title" class="post">
                         <br><br> 
                         Poem:
-                        <textarea name="poem" class="post" style="width: 69%; height: 500px"> </textarea>
+                        <textarea name="poem" maxlength="9999" class="post" style="width: 69%; height: 500px"> </textarea>
                         <br><br>  
                         <center>    
                             <input type="SUBMIT" value="Post">

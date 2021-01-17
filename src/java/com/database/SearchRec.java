@@ -50,7 +50,7 @@ public class SearchRec {
         int result;
         try{
             Statement stmt = conn.createStatement();
-            String SEARCH_RECORDS_SQL = "SELECT poem FROM poems WHERE id='" +id+"';";
+            String SEARCH_RECORDS_SQL = "SELECT * FROM poems WHERE id='" +id+"';";
             ResultSet rs = stmt.executeQuery(SEARCH_RECORDS_SQL);
             System.out.println(SEARCH_RECORDS_SQL);
             return rs;
@@ -131,5 +131,22 @@ public class SearchRec {
             e.printStackTrace();
             return null;
         }
-    }      
+    }
+    public static int searchLogIn(Connection conn, String username, String password){
+        int result;
+        try{
+            Statement stmt = conn.createStatement();
+            String SEARCH_RECORDS_SQL = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "';";
+            ResultSet rs = stmt.executeQuery(SEARCH_RECORDS_SQL);
+            if(rs.next()){//vrike
+                result = 1;
+            }else{
+                result = 0;
+            }
+            return result;
+        }catch(Exception e){
+            e.printStackTrace();
+            return -1;
+        }
+    }
 }
